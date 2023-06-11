@@ -1,0 +1,118 @@
+
+
+* {
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+}
+
+header nav {
+    height: 7.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-inline: 2.4rem;
+    /* box-shadow: 0px offset x 2px offset y 4px blur rgba(255, 255, 255, 0.8); */
+
+    border: 1px solid black;
+}
+
+#nav-links {
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+}
+
+#logo {
+    font-size: 2.6rem;
+    position: absolute;
+    padding: 2.6rem;
+    top: 20px;
+    left: calc(50% - 4.2rem);
+    border-radius: 50%;
+
+    border: 1px solid black;
+}
+
+#product-container {
+    height: 70vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1.3fr 1fr;
+    grid-template-areas: 
+    'imgs imgs details details'
+    'imgs imgs colors sizes';
+    gap: 2.6rem;
+    padding: 2.6rem;
+    margin-top: 5rem;
+}
+
+#images {
+    grid-area: imgs;
+
+    border: 1px solid black;
+
+}
+
+#details {
+    grid-area: details;
+
+    border: 1px solid black;
+
+}
+
+#colors {
+    grid-area: colors;
+
+    border: 1px solid black;
+
+}
+
+#sizes {
+    grid-area: sizes;
+
+    border: 1px solid black;
+
+}
+
+
+#actions-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: calc(100vh - 70vh - 7.6rem - 5rem);
+    grid-template-areas: 
+    'buy extra similar similar';
+    gap: 2.6rem;
+    padding: 2.6rem;
+}
+
+#buy {
+    grid-area: buy;
+}
+
+#extra {
+    grid-area: extra;
+    display: flex;
+    gap: 2.6rem;
+}
+
+#similar {
+    grid-area: similar;
+
+    border: 1px solid black;
+}
+
+#heart {
+    flex: 1 1;
+}
+
+#review {
+    flex: 1 1;
+}
