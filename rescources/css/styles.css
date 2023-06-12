@@ -3,13 +3,13 @@
 :root {
     --primary: hsl(195, 100%, 50%);
     --secondary: hsl(176, 100%, 50%);
-    --third: hsl(177, 100%, 78%);
+    --third: hsl(177, 100%, 90%);
     --accent: hsl(44, 100%, 50%);
     --text: hsl(0, 0%, 6%);
 }
 
 * {
-    font-size: 1.8rem;
+    font-size: 2rem;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -24,12 +24,41 @@ body {
     background-color: var(--primary);
 }
 
+h1 {
+    font-size: 3.6rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 1rem;
+}
+
 img {
     display: block;
-    max-width: 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background-position: cover;
+    border-radius: 1rem;  
+}
+
+button {
+    cursor: pointer;
+    border-radius: 1rem;
+    border: 0;
+}
+
+ i {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 3rem;
+    margin-inline: 1rem;
+ }
+
+.size,
+.color {
+    width: 7.5rem;
+    height: 7.5rem;
 }
 
 /*Navbar*/
@@ -42,12 +71,14 @@ header nav {
     justify-content: space-between;
     position: relative;
     padding-inline: 2.6rem;
+    margin-inline: 2.6rem;
+    border-radius: 0 0 1rem 1rem;
     /* box-shadow: 0px offset x 2px offset y 4px blur rgba(255, 255, 255, 0.8); */
 }
 
 #nav-links {
     display: flex;
-    gap: 1.6rem;
+    gap: 3rem;
     list-style: none;
     padding: 0;
 }
@@ -63,6 +94,16 @@ header nav {
     border-radius: 50%;
 }
 
+#nav-buttons {
+    display: flex;
+    gap: 3rem;
+}
+
+#nav-buttons button {
+    padding: 1rem;
+    background-color: var(--primary);
+}
+
 /*Product*/
 
 #product-container {
@@ -76,51 +117,99 @@ header nav {
     gap: 2.6rem;
     padding: 2.6rem 2.6rem 0 2.6rem;
     margin-top: 5rem;
+} 
+
+#price {
+    font-size: 2.6rem;
 }
 
 #details {
     background-color: var(--third);
     padding: 1.6rem;
+    border-radius: 1rem;
     grid-area: details;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
 }
 
 #colors {
     background-color: var(--third);
     padding: 1.6rem;
+    border-radius: 1rem;
     grid-area: colors;
 }
 
 #sizes {
     background-color: var(--third);
     padding: 1.6rem;
+    border-radius: 1rem;
     grid-area: sizes;
 }
 
 #images {
     grid-area: imgs;
     display: grid;
-    grid-template-columns: 49% 51%;
-    grid-template-rows: 54% 46%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 56.5% 43.5%;
     grid-template-areas: 
     'big side1'
     'big side2';
     gap: 2.6rem;
-    overflow: hidden;
+    overflow: clip;
+    border-radius: 1rem;
+    padding: 0 2.6rem 2.6rem 0;  
 }
 
 #img-big {
     grid-area: big; 
-    object-position: 10% 90%;   
+    object-position: 10% 90%;  
 }
 
 #img-side1 {
     grid-area: side1;
-    object-position: 10% 10%;
+    object-position: 10% 10%
 }
 
 #img-side2 {
     grid-area: side2;
-    object-position: 40% 60%;
+    object-position: 40% 60%
+}
+
+.btn-container {
+    width: 80%;
+    height: 80%;
+    margin-inline: auto;
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#colors button {
+    border-radius: 50%;
+}
+
+.red {
+    background-color: hsl(0, 85%, 50%);
+}
+
+.green {
+    background-color: hsl(101, 85%, 50%);
+}
+
+.blue {
+    background-color: hsl(233, 85%, 50%);
+}
+
+.yellow {
+    background-color: hsl(55, 85%, 50%);
+}
+
+#colors button {
+    width: ;
 }
 
 /*Actions*/
@@ -133,6 +222,14 @@ header nav {
     'buy extra similar similar';
     gap: 2.6rem;
     padding: 2.6rem;
+}
+
+#actions-container button {
+    font-size: 2.6rem;
+}
+
+#actions-container i {
+    display: block;
 }
 
 #buy {
@@ -148,6 +245,7 @@ header nav {
 #similar {
     background-color: var(--third);
     padding: 1.6rem;
+    border-radius: 1rem;
     grid-area: similar;
 }
 
