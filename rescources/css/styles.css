@@ -1,10 +1,11 @@
-/*Universal and Reset*/
+/*Universal and Reset and Fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&family=Oxygen&display=swap');
 
 :root {
     --primary: hsl(195, 100%, 50%);
     --secondary: hsl(176, 100%, 50%);
     --third: hsl(177, 100%, 90%);
-    --accent: hsl(44, 100%, 50%);
     --text: hsl(0, 0%, 6%);
 }
 
@@ -14,6 +15,7 @@
     margin: 0;
     padding: 0;
     color: var(--text);
+    font-family: 'Oxygen', Verdana, sans-serif;
 }
 
 html {
@@ -22,6 +24,10 @@ html {
 
 body {
     background-color: var(--primary);
+}
+
+h1, h2, h3 {
+    font-family: 'Lobster Two', Times, serif;
 }
 
 h1 {
@@ -48,12 +54,25 @@ button {
     border: 0;
 }
 
- i {
+button:hover {
+    background-color: var(--secondary);
+}
+
+i {
     display: inline-block;
     vertical-align: middle;
     font-size: 3rem;
     margin-inline: 1rem;
- }
+    margin-bottom: 0.3rem;
+}
+
+a  {
+    font-weight: 600;
+}
+
+a:hover{
+    opacity: 0.7;
+}
 
 .size,
 .color {
@@ -73,7 +92,6 @@ header nav {
     padding-inline: 2.6rem;
     margin-inline: 2.6rem;
     border-radius: 0 0 1rem 1rem;
-    /* box-shadow: 0px offset x 2px offset y 4px blur rgba(255, 255, 255, 0.8); */
 }
 
 #nav-links {
@@ -90,7 +108,7 @@ header nav {
     position: absolute;
     padding: 3rem;
     top: 0;
-    left: calc(50% - 5.9rem);
+    left: calc(50% - 7.1rem);
     border-radius: 50%;
 }
 
@@ -102,6 +120,10 @@ header nav {
 #nav-buttons button {
     padding: 1rem;
     background-color: var(--primary);
+}
+
+#nav-buttons button:hover i {
+    color: hsl(0, 0%, 100%);
 }
 
 /*Product*/
@@ -208,10 +230,6 @@ header nav {
     background-color: hsl(55, 85%, 50%);
 }
 
-#colors button {
-    width: ;
-}
-
 /*Actions*/
 
 #actions-container {
@@ -247,6 +265,18 @@ header nav {
     padding: 1.6rem;
     border-radius: 1rem;
     grid-area: similar;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+#similar img {
+    max-width: 15%;
+}
+
+#similar h3 {
+    margin-right: 4rem;
 }
 
 #heart {
@@ -257,12 +287,63 @@ header nav {
     flex: 1 1;
 }
 
+
 /*Media Queries*/
+
+@media only screen and (max-width: 1540px) {
+    #product-container,
+    #actions-container {
+        height: auto;
+    }
+
+    .btn-container {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 1150px) {
+    html {
+        font-size: 8px;
+    }
+}
 
 @media only screen and (max-width: 760px) {
     #product-container,
     #actions-container {
         display: block;
         height: auto;
+    }
+
+    #actions-container {
+        padding-block: 0;
+    }
+
+    #images {
+        max-height: 60vh;
+    }
+
+    #sizes, #colors, #details, #similar, #extra {
+        margin-block: 1.6rem;
+    }
+
+    #buy {
+        width: 100%;
+    }
+    
+    #similar h3 {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #nav-links,
+    #logo {
+        display: none;
+    }
+
+    #nav-buttons {
+        width: 100%;
+        justify-content: space-between;
     }
 }
